@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: insurance-service
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: admin
+    password: qwerty
+    url: jdbc:postgresql://localhost:5432/insurance-service-db
+
+  liquibase:
+    change-log: db/changelog/changelog-master.yml
+
+server:
+  port: 8081

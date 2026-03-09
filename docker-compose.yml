@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: insurance-service-db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: qwerty
+      POSTGRES_DB: insurance-service-db
+    ports:
+      - "5432:5432"
+    volumes:
+      - insurance-service-data:/var/lib/postgresql/data
+
+volumes:
+  insurance-service-data:
