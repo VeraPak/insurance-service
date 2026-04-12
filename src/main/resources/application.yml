@@ -12,3 +12,30 @@ spring:
 
 server:
   port: 8081
+
+ms:
+  insurance:
+    calculator:
+      life:
+#       базовый коэф. / 1000ед.
+        base-rate-per-thousand: ${BASE_RATE_PER_THOUSAND_LIFE:1.5}
+#       возрастной коэф.
+        age-factor:
+          young: ${AGE_FACTOR_YOUNG:1.2}
+          middle: ${AGE_FACTOR_MIDDLE:1.0}
+          senior: ${AGE_FACTOR_SENIOR:1.8}
+          elderly: ${AGE_FACTOR_ELDERLY:2.5}
+#       срок действия полюса
+        policy-term-factor:
+          short-term: ${POLICY_TERM_FACTOR_SHORT_TERM:1.1}
+          medium-term: ${POLICY_TERM_FACTOR_MEDIUM_TERM:1.0}
+          long-term: ${POLICY_TERM_FACTOR_LONG_TERM:0.9}
+#       профессии с повышенным риском
+        high-risk-occupation-factor: ${HIGH_RISK_OCCUPATION_FACTOR:1.5}
+#       хобби с повышенным риском
+        dangerous-hobbies-factor: ${DANGEROUS_HOBBIES_FACTOR:1.5}
+#       периодичность оплаты TODO добавить куда-нибудь в расч LifePremiumCalculator
+        payment-frequency-factor:
+          monthly : ${PAYMENT_FREQUENCY_FACTOR_MONTHLY:1.0}
+          quarterly : ${PAYMENT_FREQUENCY_FACTOR_QUARTERLY:0.98}
+          yearly : ${PAYMENT_FREQUENCY_FACTOR_YEARLY:0.92}

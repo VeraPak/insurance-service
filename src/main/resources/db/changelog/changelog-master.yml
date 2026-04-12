@@ -1,0 +1,4 @@
+databaseChangeLog:
+  - include:
+      file: v-1.0.0/001-create-life-policies-table.sql
+      relativeToChangelogFile: true
