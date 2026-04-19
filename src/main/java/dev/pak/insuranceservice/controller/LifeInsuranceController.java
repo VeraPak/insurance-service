@@ -14,7 +14,7 @@ import java.util.UUID;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/life-policies")
-public class InsuranceController {
+public class LifeInsuranceController {
 
     private final LifeInsurancePolicyService service;
 

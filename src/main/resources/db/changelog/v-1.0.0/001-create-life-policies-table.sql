@@ -20,8 +20,3 @@ CREATE TABLE life_insurance_policies (
                                          has_dangerous_hobbies BOOLEAN DEFAULT false,
                                          coverage_type VARCHAR(50)
 );
-
---changeset author:create_life_policies_indexes
-CREATE INDEX idx_life_policy_client ON life_insurance_policies(client_external_id);
-CREATE INDEX idx_life_policy_status ON life_insurance_policies(status);
-CREATE INDEX idx_life_policy_number ON life_insurance_policies(policy_number);
