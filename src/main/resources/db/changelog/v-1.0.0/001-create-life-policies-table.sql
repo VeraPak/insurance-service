@@ -1,5 +1,4 @@
 --liquibase formatted sql
-
 --changeset author:create_life_policies_table
 CREATE TABLE life_insurance_policies (
                                          id UUID PRIMARY KEY DEFAULT gen_random_uuid(),

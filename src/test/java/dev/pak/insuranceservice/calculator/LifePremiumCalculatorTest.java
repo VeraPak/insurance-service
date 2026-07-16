@@ -27,10 +27,10 @@ import static org.mockito.Mockito.*;
 @MockitoSettings(strictness = Strictness.LENIENT)
 class LifePremiumCalculatorTest {
 
-    @InjectMocks
-    LifePremiumCalculator calculator;
     @Mock
     LifePremiumCalculatorProperties properties;
+    @InjectMocks
+    LifePremiumCalculator calculator;
 
     @BeforeEach
     void setUp() {
