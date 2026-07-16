@@ -5,5 +5,6 @@ public enum PolicyStatus {
     ACTIVE,
     EXPIRED,
     CANCELLED,
+    PENDING_PAYMENT,
     SUSPENDED
 }

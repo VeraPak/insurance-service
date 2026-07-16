@@ -46,4 +46,34 @@ public class GlobalExceptionHandler {
             .timestamp(LocalDateTime.now())
             .build();
     }
+
+    @ExceptionHandler(StartDateAfterEndException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public ErrorResponseDto handleStartDateAfterEndException() {
+        return ErrorResponseDto.builder()
+                .header("Несоответствие дат при создании полиса.")
+                .message("Дата начала полиса позже текущей даты. Обратитесь в службу поддержки.")
+                .timestamp(LocalDateTime.now())
+                .build();
+    }
+
+    @ExceptionHandler(StartDateBeforeNowException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public ErrorResponseDto handleStartDateBeforeNowException() {
+        return ErrorResponseDto.builder()
+                .header("Дата начала полиса ранее текущей даты.")
+                .message("Дата начала полиса ранее текущей даты. Обратитесь в службу поддержки.")
+                .timestamp(LocalDateTime.now())
+                .build();
+    }
+
+    @ExceptionHandler(InvalidCoverageAmountException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public ErrorResponseDto handleInvalidCoverageAmountException() {
+        return ErrorResponseDto.builder()
+                .header("Сумма страхового покрытия не должна быть отрицательной или нулевой.")
+                .message("Несоответствие суммы страхового покрытия. Обратитесь в службу поддержки.")
+                .timestamp(LocalDateTime.now())
+                .build();
+    }
 }

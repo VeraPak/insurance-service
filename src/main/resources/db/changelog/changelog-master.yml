@@ -2,3 +2,7 @@ databaseChangeLog:
   - include:
       file: v-1.0.0/001-create-life-policies-table.sql
       relativeToChangelogFile: true
+
+  - include:
+      file: v-1.0.0/002-create-auto-policies-table.sql
+      relativeToChangelogFile: true
